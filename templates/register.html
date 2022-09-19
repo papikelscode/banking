@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/signup.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Sign Up</title>
+</head>
+<body>
+    <section class="navigation">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="#!">Logo</a>
+          </div>
+          <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+              <li>
+                <a href="./index.html">Home</a>
+              </li>
+              <li>
+                <a href="./services.html">Service</a>
+              </li>
+              <li>
+                <a href="#!">Accounts</a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="./saving.html">Saving Accounts</a>
+                  </li>
+                  <li>
+                    <a href="./saving.html">Membership</a>
+                  </li>
+                  <li>
+                    <a href="./saving.html">Deposit Account</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#!">Learn</a>
+              </li>
+              <li>
+                <a href="#!">Loans</a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="./loans.html">Vechile Loans</a>
+                  </li>
+                  <li>
+                    <a href="./personal.html">Personal Loans</a>
+                  </li>
+                  <li>
+                    <a href="./home.html">Mortgage Loans</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#!">Contact</a>
+              </li>
+           
+            </ul>
+            
+          </nav>
+        </div>
+      </section>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<div class="form-body">
+		
+		<h3>Online Banking Registration</h3>
+		<p>All fields are compulsory</p>
+		<form action="" method="Post">
+			<div class="general">
+				<div class="first">
+					<label>First Name</label> <br>
+					<input type="text" name="fname" required>
+				</div>
+				<div class="second">
+					<label>Last Name</label> <br>
+					<input type="text" name="lname" required>
+				</div>
+			</div>
+			<div class="general">
+				<div class="first">
+					<label>Email Address</label> <br>
+					<input type="email" name="email" required>
+				</div>
+				<div class="second">
+					<label>Phone Number</label> <br>
+					<input type="text" name="phone" required>
+				</div>
+			</div>
+			<div class="general">
+				<div class="first">
+					<label>Date of Birth</label> <br>
+					<input type="date" name="dob" required>
+					<i class="fa fa-calendar" style="font-size:16px"></i>
+				</div>
+				<div class="second">
+					<label>Gender</label> <br>
+					<select required>
+						<option>Sex</option>
+						<option>Male</option>
+						<option>Female</option>
+						<option>Other</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-four">
+				<label>House/office Address</label> <br>
+				<input type="text" name="house_address" required>
+			</div>
+			<div class="general">
+				<div class="first">
+					<label>City</label> <br>
+					<input type="text" name="city" required>
+				</div>
+				<div class="second">
+					<label>ZipCode/Postal</label> <br>
+					<input type="text" name="zip" required>
+				</div>
+			</div>
+			<div class="general">
+				<div class="first">
+					<label>Country</label> <br>
+					<input type="text">
+				</div>
+				<div class="second">
+					<label>State</label> <br>
+					<input type="text">
+				</div>
+			</div>
+			<div class="general">
+				<div class="first">
+					<label>Currency</label> <br>
+					<select required>
+						<option selected value="">Select Currency</option>
+						<option value="USD">America (United States) Dollars – USD</option>
+						<option value="AFN">Afghanistan Afghanis – AFN</option>
+						<option value="ALL">Albania Leke – ALL</option>
+						<option value="DZD">Algeria Dinars – DZD</option>
+						<option value="ARS">Argentina Pesos – ARS</option>
+						<option value="AUD">Australia Dollars – AUD</option>
+						<option value="ATS">Austria Schillings – ATS</OPTION>
+ 
+						<option value="BSD">Bahamas Dollars – BSD</option>
+						<option value="BHD">Bahrain Dinars – BHD</option>
+						<option value="BDT">Bangladesh Taka – BDT</option>
+						<option value="BBD">Barbados Dollars – BBD</option>
+						<option value="BEF">Belgium Francs – BEF</OPTION>
+						<option value="BMD">Bermuda Dollars – BMD</option>
+ 
+						<option value="BRL">Brazil Reais – BRL</option>
+						<option value="BGN">Bulgaria Leva – BGN</option>
+						<option value="CAD">Canada Dollars – CAD</option>
+						<option value="XOF">CFA BCEAO Francs – XOF</option>
+						<option value="XAF">CFA BEAC Francs – XAF</option>
+						<option value="CLP">Chile Pesos – CLP</option>
+ 
+						<option value="CNY">China Yuan Renminbi – CNY</option>
+						<option value="CNY">RMB (China Yuan Renminbi) – CNY</option>
+						<option value="COP">Colombia Pesos – COP</option>
+						<option value="XPF">CFP Francs – XPF</option>
+						<option value="CRC">Costa Rica Colones – CRC</option>
+						<option value="HRK">Croatia Kuna – HRK</option>
+ 
+						<option value="CYP">Cyprus Pounds – CYP</option>
+						<option value="CZK">Czech Republic Koruny – CZK</option>
+						<option value="DKK">Denmark Kroner – DKK</option>
+						<option value="DEM">Deutsche (Germany) Marks – DEM</OPTION>
+						<option value="DOP">Dominican Republic Pesos – DOP</option>
+						<option value="NLG">Dutch (Netherlands) Guilders – NLG</OPTION>
+ 
+						<option value="XCD">Eastern Caribbean Dollars – XCD</option>
+						<option value="EGP">Egypt Pounds – EGP</option>
+						<option value="EEK">Estonia Krooni – EEK</option>
+						<option value="EUR">Euro – EUR</option>
+						<option value="FJD">Fiji Dollars – FJD</option>
+						<option value="FIM">Finland Markkaa – FIM</OPTION>
+ 
+						<option value="FRF*">France Francs – FRF*</OPTION>
+						<option value="DEM">Germany Deutsche Marks – DEM</OPTION>
+						<option value="XAU">Gold Ounces – XAU</option>
+						<option value="GRD">Greece Drachmae – GRD</OPTION>
+						<option value="GTQ">Guatemalan Quetzal – GTQ</OPTION>
+						<option value="NLG">Holland (Netherlands) Guilders – NLG</OPTION>
+						<option value="HKD">Hong Kong Dollars – HKD</option>
+ 
+						<option value="HUF">Hungary Forint – HUF</option>
+						<option value="ISK">Iceland Kronur – ISK</option>
+						<option value="XDR">IMF Special Drawing Right – XDR</option>
+						<option value="INR">India Rupees – INR</option>
+						<option value="IDR">Indonesia Rupiahs – IDR</option>
+						<option value="IRR">Iran Rials – IRR</option>
+ 
+						<option value="IQD">Iraq Dinars – IQD</option>
+						<option value="IEP*">Ireland Pounds – IEP*</OPTION>
+						<option value="ILS">Israel New Shekels – ILS</option>
+						<option value="ITL*">Italy Lire – ITL*</OPTION>
+						<option value="JMD">Jamaica Dollars – JMD</option>
+						<option value="JPY">Japan Yen – JPY</option>
+ 
+						<option value="JOD">Jordan Dinars – JOD</option>
+						<option value="KES">Kenya Shillings – KES</option>
+						<option value="KRW">Korea (South) Won – KRW</option>
+						<option value="KWD">Kuwait Dinars – KWD</option>
+						<option value="LBP">Lebanon Pounds – LBP</option>
+						<option value="LUF">Luxembourg Francs – LUF</OPTION>
+ 
+						<option value="MYR">Malaysia Ringgits – MYR</option>
+						<option value="MTL">Malta Liri – MTL</option>
+						<option value="MUR">Mauritius Rupees – MUR</option>
+						<option value="MXN">Mexico Pesos – MXN</option>
+						<option value="MAD">Morocco Dirhams – MAD</option>
+						<option value="NLG">Netherlands Guilders – NLG</OPTION>
+						 
+						<option value="NZD">New Zealand Dollars – NZD</option>
+						<option value="NOK">Norway Kroner – NOK</option>
+						<option value="OMR">Oman Rials – OMR</option>
+						<option value="PKR">Pakistan Rupees – PKR</option>
+						<option value="XPD">Palladium Ounces – XPD</option>
+						<option value="PEN">Peru Nuevos Soles – PEN</option>
+						 
+						<option value="PHP">Philippines Pesos – PHP</option>
+						<option value="XPT">Platinum Ounces – XPT</option>
+						<option value="PLN">Poland Zlotych – PLN</option>
+						<option value="PTE">Portugal Escudos – PTE</OPTION>
+						<option value="QAR">Qatar Riyals – QAR</option>
+						<option value="RON">Romania New Lei – RON</option>
+ 
+						<option value="ROL">Romania Lei – ROL</option>
+						<option value="RUB">Russia Rubles – RUB</option>
+						<option value="SAR">Saudi Arabia Riyals – SAR</option>
+						<option value="XAG">Silver Ounces – XAG</option>
+						<option value="SGD">Singapore Dollars – SGD</option>
+						<option value="SKK">Slovakia Koruny – SKK</option>
+						 
+						<option value="SIT">Slovenia Tolars – SIT</option>
+						<option value="ZAR">South Africa Rand – ZAR</option>
+						<option value="KRW">South Korea Won – KRW</option>
+						<option value="ESP">Spain Pesetas – ESP</OPTION> 
+						 
+						<option value="SDD">Sudan Dinars – SDD</option>
+						<option value="SEK">Sweden Kronor – SEK</option>
+						<option value="CHF">Switzerland Francs – CHF</option>
+						<option value="TWD">Taiwan New Dollars – TWD</option>
+						<option value="THB">Thailand Baht – THB</option>
+						<option value="TTD">Trinidad and Tobago Dollars – TTD</option>
+						 
+						<option value="TND">Tunisia Dinars – TND</option>
+						<option value="TRY">Turkey New Lira – TRY</option>
+						<option value="AED">United Arab Emirates Dirhams – AED</option>
+						<option value="GBP">United Kingdom Pounds – GBP</option>
+						<option value="USD">United States Dollars – USD</option>
+						<option value="VEB">Venezuela Bolivares – VEB</option>
+						 
+						<option value="VND">Vietnam Dong – VND</option>
+						<option value="ZMK">Zambia Kwacha – ZMK</option>
+					</select>
+				</div>
+				<div class="second">
+					<label>SSN/National ID No</label> <br>
+					<input type="text" name="id" required>
+				</div>
+			</div>
+			<div class="general">
+				<div class="first">
+					<label>Name and Address of Employer:</label> <br>
+					<input type="text" name="employer" required>
+				</div>
+				<div class="second">
+					<label>Employment Type:</label> <br>
+					<select required>
+						<option value="">Type of Employment</option>
+						<option value="self Employed">Self Employed</option>  
+						<option value="self Employed">Public/Government Office</option>  
+						<option value="self Employed">P/Partnership Office</option>  
+						<option value="self Employed">Business/Sales</option>  
+						<option value="self Employed">Trading/Market</option>  
+						<option value="self Employed">Military/Paramilitary</option>
+						<option value="self Employed">Politician/Celebrity</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-nine">
+				<div class="salary">
+					<label>Monthly Net Salary:</label> <br>
+				<select required>
+						<option value="">Select Salary Range</option>
+						<option value="$100.00 - $500.00">$100.00 - $500.00</option> 
+						<option value="$700.00 - $1,000.00">$700.00 - $1,000.00</option> 
+						<option value="$1,000.00 - $2,000.00">$1,000.00 - $2,000.00</option> 
+						<option value="$2,000.00 - $5,000.00">$2,000.00 - $5,000.00</option> 
+						<option value="$5,000.00 - $10,000.00">$5,000.00 - $10,000.00</option> 
+						<option value="$15,000.00 - $20,000.00">$15,000.00 - $20,000.00</option> 
+						<option value="$25,000.00 - $30,000.00">$25,000.00 - $30,000.00</option> 
+						<option value="$30,000.00 - $70,000.00">$30,000.00 - $70,000.00</option> 
+						<option value="$80,000.00 - $140,000.00">$80,000.00 - $140,000.00</option> 
+						<option value="$150,000.00 - $300,000.00">$150,000.00 - $300,000.00</option> 
+						<option value="$300,000.00 - $1,000,000.00">$300,000.00 - $1,000,000.00</option> 
+				</select>
+				</div>
+			</div>
+			<div class="general">
+				<div class="first">
+					<label>Beneficiary Name</label> <br>
+					<input type="text" name="bn" required>
+				</div>
+				<div class="second">
+					<label>Beneficiary Occupation:</label> <br>
+					<input type="text" name="Occupation" required>
+				</div>
+			</div>
+			<div class="general">
+				<div class="first">
+					<label>Choose Password</label> <br>
+					<input type="password" name="pass" required>
+				</div>
+				<div class="second">
+					<label>Confirm Password</label> <br>
+					<input type="password" name="pass" required>
+				</div>
+			</div>
+			<!-- <div class="general">
+				<div class="first">
+					<label>Choose Account 2FA PIN:</label> <br>
+					<input type="password" name="pass" required>
+				</div>
+				<div class="second">
+					<label>Confirm Account 2FA PIN:</label> <br>
+					<input type="password" name="pass" required>
+				</div>
+			</div> -->
+			<div class="general">
+				<div class="first">
+					<label>Choose Account Type:</label> <br>
+					<select required>
+						<option value="">Please select Account Type</option>
+						<option value="">Account Type</option>
+						<option value="Checking Account">Checking Account</option>
+						<option value="Savings Account">Saving Account</option>
+						<option value="Fixed Deposit Account">Fixed Deposit Account</option>
+						<option value="Current Account">Current Account</option>
+						<option value="Business Account">Business Account</option>
+						<option value="Non Resident Account">Non Resident Account</option>
+						<option value="Cooperate Business Account">Cooperate Business Account</option>
+						<option value="Investment Account">Investment Account</option>
+					</select>
+				</div>
+				<div class="second photo">
+					<label id="copy">Your Passport photograph</label> <br>
+					<input type="file" name="photo" value="Choose File" required>
+				</div>
+			</div>
+			<div class="general-end">
+				<div class="click">
+					
+
+				</div>
+				<div class="cancel">
+					<a href="#my-modal-2" class="btn">Submit</a>
+					<button class="btn">Cancel</button>
+				</div>
+			</div>
+			<!-- The button to open modal -->
+<!-- Put this part before </body> tag -->
+<div class="modal" id="my-modal-2">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Application Received</h3>
+	<div class="divider"></div>
+
+	<h1><b>Success!!!</b></h1>
+    <p class="py-4">Please kindly wait 1-2 business working day to enable us process your application 
+		meanwhile, we have sent you an email with your temporary 10 digit account number.
+
+		<br>
+		you will be notify via email immediately your account is activated 
+
+
+
+	</p>
+    <div class="modal-action">
+     <a href="#" class="btn">Close</a>
+    </div>
+  </div>
+</div>
+		</form>
+		<div class="rev">
+			<p>Copyright &copy; 2022 <a href="https://bigtect.com/">BIG TECH BANK</a> All rights reserved.</p>
+		</div>
+	</div>
+
+    <footer class="footer p-10 bg-base-300 text-base-content">
+        <div>
+          <span class="footer-title">Services</span> 
+          <a class="link link-hover">Branding</a> 
+          <a class="link link-hover">Design</a> 
+          <a class="link link-hover">Marketing</a> 
+          <a class="link link-hover">Advertisement</a>
+        </div> 
+        <div>
+          <span class="footer-title">Company</span> 
+          <a class="link link-hover">About us</a> 
+          <a class="link link-hover">Contact</a> 
+          <a class="link link-hover">Jobs</a> 
+          <a class="link link-hover">Press kit</a>
+        </div> 
+        <div>
+          <span class="footer-title">Social</span> 
+          <div class="grid grid-flow-col gap-4">
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+          </div>
+        </div>
+      </footer>
+
+<script>
+    (function($) { // Begin jQuery
+   $(function() { // DOM ready
+     // If a link has a dropdown, add sub menu toggle.
+     $('nav ul li a:not(:only-child)').click(function(e) {
+       $(this).siblings('.nav-dropdown').toggle();
+       // Close one dropdown when selecting another
+       $('.nav-dropdown').not($(this).siblings()).hide();
+       e.stopPropagation();
+     });
+     // Clicking away from dropdown will remove the dropdown class
+     $('html').click(function() {
+       $('.nav-dropdown').hide();
+     });
+     // Toggle open and close nav styles on click
+     $('#nav-toggle').click(function() {
+       $('nav ul').slideToggle();
+     });
+     // Hamburger to X toggle
+     $('#nav-toggle').on('click', function() {
+       this.classList.toggle('active');
+     });
+   }); // end DOM ready
+ })(jQuery); // end jQuery
+ </script>
+ 
+ 
+ 
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <script src="../static/js/script.js"></script>
+</body>
+</html>

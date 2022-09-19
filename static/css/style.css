@@ -319,7 +319,7 @@ box-shadow: 5px 10px #888888;
   .hero li{
     list-style-type: disc;
   }
-
+ 
 
   @media only screen and (max-width: 767px) {
     .previous_btn {
