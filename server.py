@@ -44,6 +44,7 @@ class User(db.Model,UserMixin):
     email = db.Column(db.String(255), unique=True)
     phone = db.Column(db.Integer)
     dob = db.Column(db.Integer)
+    sex = db.Column(db.String(255))
     house_address = db.Column(db.String(255))
     city =  db.Column(db.String(255))
     postal_code = db.Column(db.Integer)
@@ -60,6 +61,11 @@ class User(db.Model,UserMixin):
     con_password =  db.Column(db.String(500))
     account_type = db.Column(db.String(255))
     passport = db.Column(db.String(255))
+    account_number = db.Column(db.String(255))
+    Book_balance = db.Column(db.String(255))
+    loan_limit = db.Column(db.String(255))
+    card_limit = db.Column(db.String(255))
+    active = db.Column(db.Boolean)
     transactions = db.relationship('Transactions', backref='users', lazy=True)
     payments = db.relationship('Payments', backref='users', lazy=True)
 
@@ -72,11 +78,29 @@ class User(db.Model,UserMixin):
         self.password = generate_password_hash(password, method='sha256')
 
 
-    def create(self, Firstname='',  email='', lastname='', password='',referID='',account_type =''):
+    def create(self, Firstname='',  email='', lastname='', phone='', dob='', sex='', house_address='', city='', postal_code='', country='', state='', currency='', national__id='',  employer_address='', employ_type='', salary='', name_kin='', kin_work='', password='', con_password='' , account_type='' , passport='', referID=''):
         self.Firstname	 = Firstname
         self.email	 = email
         self.lastname 	 = lastname
         account_type = account_type
+        phone = phone
+        dob = dob
+        sex = sex
+        house_address = house_address
+        city = city
+        postal_code = postal_code
+        country = country
+        state = state
+        currency = currency
+        national__id = national__id
+        employer_address = employer_address
+        employ_type = employ_type
+        salary = salary
+        name_kin = name_kin
+        kin_work = kin_work
+        password = password
+        con_password = con_password
+        passport = passport
         self.referID = referID
         self.password= generate_password_hash(password, method='sha256')
 
@@ -151,9 +175,9 @@ def saving():
 @app.route('/login.html')
 def login():
     return render_template('login.html')
-@app.route('/register.html')
+@app.route('/signup.html')
 def register():
-    return render_template('register.html')
+    return render_template('signup.html')
 
 @app.route('/apply.html')
 def apply():
@@ -191,6 +215,8 @@ def signin():
             mainUser = userByusername
         if userByemail:
             mainUser = userByemail
+        if mainUser.active==False:
+            return jsonify({"status":401,'msg':"your accoubt has been deactivated"})
         if mainUser:
             if mainUser.check_password(data['password']):
                 login_user(mainUser,remember=True,fresh=True)
@@ -205,11 +231,11 @@ def signin():
 
 @app.route("/signup",methods=['GET','POST'])
 def signup():
-    users = User()
+   
     if request.method == 'POST':
         data = request.json
-        Firstname = data['fname']
-        lastname = data['lname']
+        firstname = data['firstname']
+        lastname = data['lastname']
         email = data['email']
         phone = data['phone']
         dob = data['dob']
@@ -229,11 +255,11 @@ def signup():
         con_password =data['confirm']
         account_type = data['account_type']
         passport = data['passport']
-        if users.query.filter_by(national_id= national_id).first():
+        if User.query.filter_by(national_id= national_id).first():
             return jsonify({"status":404,"msg":"national ID already exist!!!"})
-        if users.query.filter_by(email=email).first():
+        if User.query.filter_by(email=email).first():
             return jsonify({"status":404,"msg":"email already exist!!!"})
-        users.create(Firstname=Firstname,
+        User.create(firstname=firstname,
                             lastname = lastname,
                             email=email,
                             phone =phone,
@@ -255,9 +281,9 @@ def signup():
                             account_type= account_type,
                             passport = passport,
                             referID=randint(456463276,7656562565))
-        users.save()
+        User.save()
 
-        login_user(users)
+        login_user(User)
         # return redirect(url_for("dashboard"))
         return jsonify({'status':200,"msg":"registration compelete!!!"})
 
@@ -280,7 +306,6 @@ def makepayment():
     db.session.commit()
     return jsonify({'status':200,'msg':'payement submmited'})
     
-
 
 
 

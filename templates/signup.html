@@ -66,6 +66,8 @@
         </div>
       </section>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	  <form action="">
 	<div class="form-body">
 		
 		<h3>Online Banking Registration</h3>
@@ -74,32 +76,32 @@
 			<div class="general">
 				<div class="first">
 					<label>First Name</label> <br>
-					<input type="text" name="fname" required>
+					<input type="text" id="firstname" required>
 				</div>
 				<div class="second">
 					<label>Last Name</label> <br>
-					<input type="text" name="lname" required>
+					<input type="text" id="lastname" required>
 				</div>
 			</div>
 			<div class="general">
 				<div class="first">
 					<label>Email Address</label> <br>
-					<input type="email" name="email" required>
+					<input type="email" id="email" required>
 				</div>
 				<div class="second">
 					<label>Phone Number</label> <br>
-					<input type="text" name="phone" required>
+					<input type="text" id="phone" required>
 				</div>
 			</div>
 			<div class="general">
 				<div class="first">
 					<label>Date of Birth</label> <br>
-					<input type="date" name="dob" required>
+					<input type="date" id="dob" required>
 					<i class="fa fa-calendar" style="font-size:16px"></i>
 				</div>
 				<div class="second">
 					<label>Gender</label> <br>
-					<select required>
+					<select required id="sex">
 						<option>Sex</option>
 						<option>Male</option>
 						<option>Female</option>
@@ -109,32 +111,32 @@
 			</div>
 			<div class="form-four">
 				<label>House/office Address</label> <br>
-				<input type="text" name="house_address" required>
+				<input type="text" id="house_address" required>
 			</div>
 			<div class="general">
 				<div class="first">
 					<label>City</label> <br>
-					<input type="text" name="city" required>
+					<input type="text" id="city" required>
 				</div>
 				<div class="second">
 					<label>ZipCode/Postal</label> <br>
-					<input type="text" name="zip" required>
+					<input type="text" id="postal_code" required>
 				</div>
 			</div>
 			<div class="general">
 				<div class="first">
 					<label>Country</label> <br>
-					<input type="text">
+					<input type="text" id="country">
 				</div>
 				<div class="second">
 					<label>State</label> <br>
-					<input type="text">
+					<input type="text" id="state">
 				</div>
 			</div>
 			<div class="general">
 				<div class="first">
 					<label>Currency</label> <br>
-					<select required>
+					<select required id="currency">
 						<option selected value="">Select Currency</option>
 						<option value="USD">America (United States) Dollars – USD</option>
 						<option value="AFN">Afghanistan Afghanis – AFN</option>
@@ -261,17 +263,17 @@
 				</div>
 				<div class="second">
 					<label>SSN/National ID No</label> <br>
-					<input type="text" name="id" required>
+					<input type="text" id="national_id" required>
 				</div>
 			</div>
 			<div class="general">
 				<div class="first">
 					<label>Name and Address of Employer:</label> <br>
-					<input type="text" name="employer" required>
+					<input type="text" id="employer_address" required>
 				</div>
 				<div class="second">
 					<label>Employment Type:</label> <br>
-					<select required>
+					<select required id="employ_type">
 						<option value="">Type of Employment</option>
 						<option value="self Employed">Self Employed</option>  
 						<option value="self Employed">Public/Government Office</option>  
@@ -286,7 +288,7 @@
 			<div class="form-nine">
 				<div class="salary">
 					<label>Monthly Net Salary:</label> <br>
-				<select required>
+				<select required id="salary">
 						<option value="">Select Salary Range</option>
 						<option value="$100.00 - $500.00">$100.00 - $500.00</option> 
 						<option value="$700.00 - $1,000.00">$700.00 - $1,000.00</option> 
@@ -305,21 +307,21 @@
 			<div class="general">
 				<div class="first">
 					<label>Beneficiary Name</label> <br>
-					<input type="text" name="bn" required>
+					<input type="text" id="name_kin" required>
 				</div>
 				<div class="second">
 					<label>Beneficiary Occupation:</label> <br>
-					<input type="text" name="Occupation" required>
+					<input type="text" id="kin_work" required>
 				</div>
 			</div>
 			<div class="general">
 				<div class="first">
 					<label>Choose Password</label> <br>
-					<input type="password" name="pass" required>
+					<input type="password" id="password" required>
 				</div>
 				<div class="second">
 					<label>Confirm Password</label> <br>
-					<input type="password" name="pass" required>
+					<input type="password" id="con_password" required>
 				</div>
 			</div>
 			<!-- <div class="general">
@@ -335,7 +337,7 @@
 			<div class="general">
 				<div class="first">
 					<label>Choose Account Type:</label> <br>
-					<select required>
+					<select required id="account_type">
 						<option value="">Please select Account Type</option>
 						<option value="">Account Type</option>
 						<option value="Checking Account">Checking Account</option>
@@ -350,7 +352,7 @@
 				</div>
 				<div class="second photo">
 					<label id="copy">Your Passport photograph</label> <br>
-					<input type="file" name="photo" value="Choose File" required>
+					<input type="file" id="passport" value="Choose File" required>
 				</div>
 			</div>
 			<div class="general-end">
@@ -359,10 +361,11 @@
 
 				</div>
 				<div class="cancel">
-					<a href="#my-modal-2" class="btn">Submit</a>
+					<a onclick="Signup()" class="btn">Submit</a>
 					<button class="btn">Cancel</button>
 				</div>
 			</div>
+		</form>
 			<!-- The button to open modal -->
 <!-- Put this part before </body> tag -->
 <div class="modal" id="my-modal-2">
@@ -446,5 +449,8 @@
  
  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
  <script src="../static/js/script.js"></script>
+ <script src="{{url_for('static',filename='js/auth.js')}}"></script>
+ <script src="{{url_for('static',filename='/js/axios.min.js')}}"></script>
+
 </body>
 </html>
