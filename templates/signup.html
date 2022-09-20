@@ -350,10 +350,7 @@
 						<option value="Investment Account">Investment Account</option>
 					</select>
 				</div>
-				<div class="second photo">
-					<label id="copy">Your Passport photograph</label> <br>
-					<input type="file" id="passport" value="Choose File" required>
-				</div>
+			
 			</div>
 			<div class="general-end">
 				<div class="click">
@@ -361,7 +358,7 @@
 
 				</div>
 				<div class="cancel">
-					<a onclick="Signup()" class="btn">Submit</a>
+					<a onclick="Signup()" class="btn" value="submit" type="submit">submit</a>
 					<button class="btn">Cancel</button>
 				</div>
 			</div>
@@ -445,12 +442,13 @@
  })(jQuery); // end jQuery
  </script>
  
- 
- 
+ <!-- <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
+ <script src="{{url_for("static",filename='assets/js/auth.js')}}"></script>
+  -->
+  <script src="../static/js/auth.js"></script>
+  <script src="../static/js/axios.min.js"></script>
  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
  <script src="../static/js/script.js"></script>
- <script src="{{url_for('static',filename='js/auth.js')}}"></script>
- <script src="{{url_for('static',filename='/js/axios.min.js')}}"></script>
-
+ 
 </body>
 </html>

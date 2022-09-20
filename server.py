@@ -78,29 +78,29 @@ class User(db.Model,UserMixin):
         self.password = generate_password_hash(password, method='sha256')
 
 
-    def create(self, Firstname='',  email='', lastname='', phone='', dob='', sex='', house_address='', city='', postal_code='', country='', state='', currency='', national__id='',  employer_address='', employ_type='', salary='', name_kin='', kin_work='', password='', con_password='' , account_type='' , passport='', referID=''):
+    def create(self, Firstname='',  email='', lastname='', phone='', dob='', sex='', house_address='', city='', postal_code='', country='', state='', currency='', national_id='',  employer_address='', employ_type='', salary='', name_kin='', kin_work='', password='', con_password='' , account_type='' ,  referID=''):
         self.Firstname	 = Firstname
         self.email	 = email
         self.lastname 	 = lastname
-        account_type = account_type
-        phone = phone
-        dob = dob
-        sex = sex
-        house_address = house_address
-        city = city
-        postal_code = postal_code
-        country = country
-        state = state
-        currency = currency
-        national__id = national__id
-        employer_address = employer_address
-        employ_type = employ_type
-        salary = salary
-        name_kin = name_kin
-        kin_work = kin_work
-        password = password
-        con_password = con_password
-        passport = passport
+        self.account_type = account_type
+        self.phone = phone
+        self.dob = dob
+        self.sex = sex
+        self.house_address = house_address
+        self.city = city
+        self.postal_code = postal_code
+        self.country = country
+        self.state = state
+        self.currency = currency
+        self.national_id = national_id
+        self.employer_address = employer_address
+        self.employ_type = employ_type
+        self.salary = salary
+        self.name_kin = name_kin
+        self.kin_work = kin_work
+        
+        self.con_password = con_password
+   
         self.referID = referID
         self.password= generate_password_hash(password, method='sha256')
 
@@ -195,10 +195,10 @@ def modals():
 
 
 
-@login_required
-def profile():
-    siteSettings = Settings.query.all()
-    return render_template('profile.html', siteSettings=siteSettings)
+# @login_required
+# def profile():
+#     siteSettings = Settings.query.all()
+#     return render_template('profile.html', siteSettings=siteSettings)
 
 @app.route("/signin",methods=['GET','POST'])
 def signin():
@@ -241,25 +241,25 @@ def signup():
         dob = data['dob']
         house_address = data['house_address']
         city = data['city']
-        postal_code = data['postal']
+        postal_code = data['postal_code']
         country = data['country']
         state = data['state']
         currency = data['currency']
-        national_id = data['id_card']
+        national_id = data['national_id']
         employer_address = data['employer_address']
         employ_type = data['work']
         salary = data['salary']
         name_kin = data['name_kin']
         kin_work = data['kin_work']
         password = data['password']
-        con_password =data['confirm']
+        con_password =data['con_password']
         account_type = data['account_type']
-        passport = data['passport']
+    
         if User.query.filter_by(national_id= national_id).first():
             return jsonify({"status":404,"msg":"national ID already exist!!!"})
         if User.query.filter_by(email=email).first():
             return jsonify({"status":404,"msg":"email already exist!!!"})
-        User.create(firstname=firstname,
+        User.create(Firstname=firstname,
                             lastname = lastname,
                             email=email,
                             phone =phone,
@@ -279,7 +279,7 @@ def signup():
                             password= password,
                             con_password = con_password,
                             account_type= account_type,
-                            passport = passport,
+                           
                             referID=randint(456463276,7656562565))
         User.save()
 
@@ -289,22 +289,22 @@ def signup():
 
     return render_template("signup.html")
 
-@app.route('/payments',methods=['POST'])
-def makepayment():
-    data = request.json
-    if Payments.query.filter_by(paymentID=data['paymentID']).first():
-        return jsonify({'status':404,'msg':'payment already exist'})
-    new_payment = Payments(
-        paymentID=data['paymentID'],
-        user = current_user.id,
-        paymentwallet=data['walletid'])
-    new_transaction = Transactions(description='Account funding',
-                                    txtype='Payment Deposit',
-                                    user=current_user.id)
-    db.session.add(new_transaction)
-    db.session.add(new_payment)
-    db.session.commit()
-    return jsonify({'status':200,'msg':'payement submmited'})
+# @app.route('/payments',methods=['POST'])
+# def makepayment():
+#     data = request.json
+#     if Payments.query.filter_by(paymentID=data['paymentID']).first():
+#         return jsonify({'status':404,'msg':'payment already exist'})
+#     new_payment = Payments(
+#         paymentID=data['paymentID'],
+#         user = current_user.id,
+#         paymentwallet=data['walletid'])
+#     new_transaction = Transactions(description='Account funding',
+#                                     txtype='Payment Deposit',
+#                                     user=current_user.id)
+#     db.session.add(new_transaction)
+#     db.session.add(new_payment)
+#     db.session.commit()
+#     return jsonify({'status':200,'msg':'payement submmited'})
     
 
 

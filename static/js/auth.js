@@ -37,7 +37,7 @@ const Signup = async () =>{
         Details.kin_work = document.getElementById("kin_work").value
         Details.password = document.getElementById("password").value
         Details.account_type = accounttype
-        Details.passport = document.getElementById("passport").value
+        
       
         console.log("details",Details);
         // var spin = document.getElementById("spin")
@@ -51,7 +51,7 @@ const Signup = async () =>{
             
         });
         
-        console.log(resp.data);
+        //console.log(resp.data);
         if (resp.data.status==200) {
            // var notify = document.getElementById("notification")
             // document.getElementById('alertmsg').innerText = resp.data.msg
@@ -71,7 +71,7 @@ const Signup = async () =>{
         }
 
     } catch (error) {
-      console.log(error.response.data);
+      console.log(error);
     }
 
 
